@@ -1,0 +1,11 @@
+.container{
+    display: inline;
+}
+
+.glory, .honour, .riches{
+    width: 200px;
+    height: 100px;
+    border: 7px solid navy;
+    background-color: crimson;
+    margin: 5px;
+}

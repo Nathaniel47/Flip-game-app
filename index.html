@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="gamefullouter">
+      <div class="gameintrowrp">
+        <div class="top-ad-main"></div>
+
+        <div class="nav">
+          <div><img id="logo" src="Icons/online-white-logo.svg" alt="" /></div>
+
+          <img id="arrow-icon" src="Icons/left-arrow.png" alt="" />
+          <div>
+            <h1 id="BackToGames">Back to Games</h1>
+          </div>
+        </div>
+        <div class="topcontainer">
+          <div id="GameHeader">
+            <div id="GameName">
+              <img src="Icons/GameHeader.png" alt="" />
+            </div>
+          </div>
+
+          <div class="gamebox">
+            <div class="logo">
+              <p
+                class="info"
+                style="
+                  text-transform: uppercase;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                CLICK THE P TO GET STARTED
+              </p>
+              <div class="BoxesContainer">
+                <div class="Top-Left-Card" onclick="flipCard(this)">
+                  <div class="F-Front">
+                    <h1 class="F">F</h1>
+                    <p class="figures">FIGURES</p>
+                  </div>
+                  <div class="F-Back">
+                    <div class="padded">
+                      <h2>
+                        FIGURES:
+                        <span>
+                          <b>0</b>
+                          <i>Won</i>
+                          <b>7</b>
+                          <i>Lost</i>
+                          <b>8</b>
+                          <i>Abandoned</i>
+                        </span>
+                      </h2>
+                      <div class="scoresContainer">
+                        <ul>
+                          <li>
+                            <b>Best Casual:</b>
+                            <span>-:-</span>
+                          </li>
+                          <li>
+                            <b>Best Medium:</b>
+                            <span>-:-</span>
+                          </li>
+                          <li>
+                            <b>Best Hard:</b>
+                            <span>-:-</span>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li><b>Total Flips:</b> <span>616</span></li>
+                          <li><b>Matched Flips:</b> <span>46</span></li>
+                          <li>
+                            <b>Wrong Flips:</b>
+                            <span>262</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="Top-Right-Card">
+                  <div class="L-Front">
+                    <h1 class="L">L</h1>
+                  </div>
+                </div>
+
+                <div class="Down-Left-Card" onclick="flipCard(this)">
+                  <div class="I-Front">
+                    <h1 class="I">I</h1>
+                    <p class="instructions">INSTRUCTIONS</p>
+                  </div>
+                  <div class="I-Back">
+                    <div class="padded">
+                      <h2>Instructions</h2>
+                      <p style="color: white">
+                        Press [p] to pause, or [ESC] to abandon game.
+                      </p>
+
+                      <p>
+                        <span class="smoke"
+                          >Flip is a timed card memory game. Click the blue
+                          cards to see what symbol they uncover and try to find
+                          the matching symbol underneath the other cards.</span
+                        >
+                      </p>
+                      <p>
+                        <span class="smoke"
+                          >Uncover two matching symbols at once to eliminate
+                          them from the game.</span
+                        >
+                      </p>
+                      <p>
+                        <span class="smoke"
+                          >Eliminate all cards as fast as you can to win the
+                          game.</span
+                        >
+                        <span style="color: white"> Have fun FLIPing!</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="Down-Right-Card" onclick="flipCard(this)">
+                  <div class="P-Front">
+                    <h1 class="P">P</h1>
+                    <p class="playnow">PLAY NOW</p>
+                  </div>
+                  <div class="P-Back">
+                    <div class=""></div>
+
+                    <a href="">Casual</a>
+                    <a href="">Medium</a>
+                    <a href="">Hard</a>
+                  </div>
+                </div>
+              </div>
+              <p class="info2">
+                Flip should work best in Google Chrome, decent in Firefox, IE10
+                and Opera;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function flipCard(element) {
+        // Check if the clicked card is already flipped
+        var isFlipped = element.classList.contains("flipped");
+
+        // Get all cards with class 'flipped' and remove the class
+        var flippedCards = document.querySelectorAll(".flipped");
+        flippedCards.forEach(function (card) {
+          card.classList.remove("flipped");
+        });
+
+        // Flip or unflip the clicked card based on its current state
+        if (!isFlipped) {
+          element.classList.add("flipped");
+        }
+      }
+    </script>
+  </body>
+</html>

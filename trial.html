@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #divCountdownBar {
+        position: absolute;
+        left: 100px;
+        width: 500px;
+        height: 3px;
+        top: 100px;
+        border: 2px lightskyblue solid;
+        background: lightblue;
+        border-radius: 10px;
+      }
+      #divTimeLeft {
+        float: left;
+        background: lightgray;
+        height: 10px;
+        border-radius: 10px;
+      }
+    </style>
+
+    <script>
+      function initBarCount() {
+        var divTimeLeft = document.getElementById("divTimeLeft");
+        var divCountdownBar = document.getElementById("divCountdownBar");
+        var startTimer = setInterval(barCount, 10);
+        function barCount() {
+          if (divTimeLeft.clientWidth < divCountdownBar.clientWidth) {
+            divTimeLeft.style.width = divTimeLeft.clientWidth + 1 + "px";
+          } else {
+            divTimeLeft.style.width = divCountdownBar.clientWidth + "px";
+            clearInterval(startTimer);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divCountdownBar" onclick="initBarCount()">
+      <div id="divTimeLeft"></div>
+    </div>
+  </body>
+</html>
